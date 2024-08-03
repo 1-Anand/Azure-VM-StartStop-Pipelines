@@ -1,0 +1,12 @@
+trigger: none
+
+pool: Default
+
+stages:
+- stage: StopVM
+  displayName: Stop VM at 9 PM
+  jobs:
+  - job: VMSTOP
+    displayName: VM Stop Job
+    steps:
+    
