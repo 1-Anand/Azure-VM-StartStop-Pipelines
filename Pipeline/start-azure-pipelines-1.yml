@@ -1,0 +1,25 @@
+trigger: none
+
+pool: Default
+
+schedules:
+- cron: '55 10 * * *'
+  displayName: Stop VM At 4 PM
+  branches:
+    include:
+    - main
+  always: true 
+
+stages:
+- stage: StopVM
+  displayName: Stop VM at 4 PM
+  jobs:
+  - job: VMSTOP
+    displayName: VM Stop Job
+    steps:
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: 'Finops Service Connection'
+        scriptType: 'ps'
+        scriptLocation: 'inlineScript'
+        inlineScript: 'az vm restart --resource-group production01 --name VM1'
