@@ -25,4 +25,8 @@ stages:
         azureSubscription: 'Finops Service Connection'
         scriptType: 'ps'
         scriptLocation: 'inlineScript'
-        inlineScript: 'az vm deallocate --resource-group $(RG-Name) --name $(VM-Name)'
+        inlineScript: |
+          $vmNames = $(VM-Name) -split ","
+                    foreach ($vmName in $vmNames) {
+                      az vm deallocate --resource-group $(RG-Name) --name $vmName.Trim('"')
+                    }
