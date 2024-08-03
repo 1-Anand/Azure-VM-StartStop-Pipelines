@@ -13,6 +13,7 @@ schedules:
 
 variables:
 - group: VM-Details
+
 stages:
 - stage: StartVM
   displayName: Start VM at 4 PM
