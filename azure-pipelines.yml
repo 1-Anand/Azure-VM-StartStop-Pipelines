@@ -4,7 +4,7 @@ trigger:
 pool: Default
 
 schedules:
-- cron: '35 15 * * *'
+- cron: '41 15 * * *'
   displayName: Stop VM At 3PM
   branches:
     include:
