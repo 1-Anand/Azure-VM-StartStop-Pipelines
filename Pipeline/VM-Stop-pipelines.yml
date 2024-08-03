@@ -25,4 +25,4 @@ stages:
         azureSubscription: 'Finops Service Connection'
         scriptType: 'ps'
         scriptLocation: 'inlineScript'
-        inlineScript: 'az vm deallocate --resource-group production01 --name VM1'
+        inlineScript: 'az vm deallocate --resource-group $(RG-Name) --name $(VM-Name)'
