@@ -10,6 +10,11 @@ schedules:
     - main
   always: true 
 
+
+variables:
+  RG-Name: production01
+  VM-Name: VM1
+
 stages:
 - stage: StartVM
   displayName: Start VM at 4 PM
@@ -22,4 +27,4 @@ stages:
         azureSubscription: 'Finops Service Connection'
         scriptType: 'ps'
         scriptLocation: 'inlineScript'
-        inlineScript: 'az vm start --resource-group production01 --name VM1'
+        inlineScript: 'az vm start --resource-group $(RG-Name) --name $(VM-Name)'
