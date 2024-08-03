@@ -3,8 +3,8 @@ trigger: none
 pool: Default
 
 schedules:
-- cron: '30 10 * * *'
-  displayName: Stop VM At 4 PM
+- cron: '30 14 * * *'
+  displayName: Stop VM At 8 PM
   branches:
     include:
     - main
@@ -15,7 +15,7 @@ variables:
 
 stages:
 - stage: StopVM
-  displayName: Stop VM at 4 PM
+  displayName: Stop VM at 8 PM
   jobs:
   - job: VMSTOP
     displayName: VM Stop Job
