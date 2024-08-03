@@ -11,8 +11,7 @@ schedules:
   always: true 
 
 variables:
-  RG-Name: production01
-  VM-Name: VM1
+- group: VM-Details
 
 stages:
 - stage: StopVM
