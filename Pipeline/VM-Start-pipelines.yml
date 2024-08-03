@@ -12,9 +12,7 @@ schedules:
 
 
 variables:
-  RG-Name: production01
-  VM-Name: VM1
-
+- group: VM-Details
 stages:
 - stage: StartVM
   displayName: Start VM at 4 PM
