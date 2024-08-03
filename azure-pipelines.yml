@@ -4,7 +4,7 @@ pool: Default
 
 schedules:
 - cron: '30 10 * * *'
-  displayName: Stop VM At 3PM
+  displayName: Stop VM At 4 PM
   branches:
     include:
     - main
@@ -12,7 +12,7 @@ schedules:
 
 stages:
 - stage: StopVM
-  displayName: Stop VM at 9 PM
+  displayName: Stop VM at 4 PM
   jobs:
   - job: VMSTOP
     displayName: VM Stop Job
