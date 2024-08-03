@@ -10,6 +10,10 @@ schedules:
     - main
   always: true 
 
+variables:
+  RG-Name: production01
+  VM-Name: VM1
+
 stages:
 - stage: StopVM
   displayName: Stop VM at 4 PM
