@@ -29,5 +29,5 @@ stages:
         inlineScript: |
           $vmNames = $(VM-Name) -split ","
                     foreach ($vmName in $vmNames) {
-                      az vm deallocate --resource-group $(RG-Name) --name $vmName.Trim('"')
+                      az vm start --resource-group $(RG-Name) --name $vmName.Trim('"')
                     }
